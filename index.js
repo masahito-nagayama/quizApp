@@ -39,7 +39,17 @@ const test = (arg) => {
 const unko2  = {
   color: 'pink',
   size: 'big',
-  purfume: 'mint'
+  purfume: 'mint',
+  goToilet: ()  => {
+    console.log('Heloo gorira');
+  }
 };
 
-console.log(unko2);
+console.log(unko2.goToilet());
+
+// JavaScriptにはあらかじめ用意されたオブジェクトがある。
+console.log(window);
+
+document.getElementsByTagName('button')[0].addEventListener('click', ()=> {
+  window.alert('がんばれ');
+});
