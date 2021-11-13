@@ -1,15 +1,23 @@
+// 問題文を定数で定義する
 const question = 'ごりらになりたいですか？つぎのうちどれ？';
+
+// 選択肢を配列で定義する
 const answers = [
   'なりたい',
   'なりたくない',
   'どちらでもいい',
   'だまれよ'
 ];
+
+// 答え
 const correct = 'なりたい';
 
+// js-questionのidのタグを指定し、その中のテキストを定数questionに書き換える
 document.getElementById('js-question').textContent = question;
 
+// 関数のdocumentでbuttonタグを指定する
 const $button = document.getElementsByTagName('button')
+// buttonタグの中のテキストをanswers定数の配列の中から順番に書き換える
 $button[0].textContent = answers[0];
 $button[1].textContent = answers[1];
 $button[2].textContent = answers[2];
