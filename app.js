@@ -3,14 +3,14 @@ const question = 'ごりらになりたいですか？つぎのうちどれ？';
 
 // 選択肢を配列で定義する
 const answers = [
-  'なりたい',
+  'なりたいよ',
   'なりたくない',
   'どちらでもいい',
   'だまれよ'
 ];
 
 // 答え
-const correct = 'なりたい';
+const correct = 'なりたいよ';
 
 // js-questionのidのタグを指定し、その中のテキストを定数questionに書き換える
 document.getElementById('js-question').textContent = question;
