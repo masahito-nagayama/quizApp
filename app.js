@@ -17,11 +17,13 @@ document.getElementById('js-question').textContent = question;
 
 // 関数のdocumentでbuttonタグを指定する
 const $button = document.getElementsByTagName('button')
-// buttonタグの中のテキストをanswers定数の配列の中から順番に書き換える
-$button[0].textContent = answers[0];
-$button[1].textContent = answers[1];
-$button[2].textContent = answers[2];
-$button[3].textContent = answers[3];
+
+let buttonIndex = 0;
+let buttonLength = $button.length
+while(buttonIndex < buttonLength){
+  $button[buttonIndex].textContent = answers[buttonIndex];
+  buttonIndex++;
+}
 
 $button[0].addEventListener('click', () => {
   if (correct === $button[0].textContent) {
