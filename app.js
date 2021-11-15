@@ -11,19 +11,20 @@ const answers = [
 
 // 答え
 const correct = 'なりたいよ';
-
-// js-questionのidのタグを指定し、その中のテキストを定数questionに書き換える
-document.getElementById('js-question').textContent = question;
+// クイズの問題文、選択肢を定義
+const setupQuiz = () => {
+  // js-questionのidのタグを指定し、その中のテキストを定数questionに書き換える
+  document.getElementById('js-question').textContent = question;
+  let buttonIndex = 0;
+  let buttonLength = $button.length
+  while(buttonIndex < buttonLength){
+    $button[buttonIndex].textContent = answers[buttonIndex];
+    buttonIndex++;
+  }
+}
 
 // 関数のdocumentでbuttonタグを指定する
 const $button = document.getElementsByTagName('button')
-
-let buttonIndex = 0;
-let buttonLength = $button.length
-while(buttonIndex < buttonLength){
-  $button[buttonIndex].textContent = answers[buttonIndex];
-  buttonIndex++;
-}
 
 $button[0].addEventListener('click', () => {
   if (correct === $button[0].textContent) {
