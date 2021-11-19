@@ -33,6 +33,7 @@ const quiz = [
 // 定数quizの配列の長さを定数quizLengthで定義しておく
 const quizLength =  quiz.length;
 let quizIndex = 0;
+let score = 0;
 
 // 関数のdocumentでbuttonタグを指定する
 const $button = document.getElementsByTagName('button')
@@ -53,6 +54,7 @@ setupQuiz();
 const clickHandler = (e) => {
   if (quiz[quizIndex].correct === e.target.textContent) {
     window.alert('正解だ！');
+    score++;
   } else {
     window.alert('ハズレだ！どんまい!');
   }
@@ -63,7 +65,7 @@ const clickHandler = (e) => {
     setupQuiz();
   } else {
     // 問題数がもうない場合はここの処理を実行する。
-    window.alert('お疲れ！頑張ったな！さよなら！');
+    window.alert(`お疲れ！頑張ったな！さよなら！正解は${score}問だ！`);
   }
 };
 
